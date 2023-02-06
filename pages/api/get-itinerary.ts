@@ -29,7 +29,7 @@ export default async function handler(
     days = 10
   }
 
-  let basePrompt = `what is an ideal itinerary for ${days} days in ${city}?`
+  let basePrompt = `Apa rencana perjalanan yang ideal untuk beberapa ${days} hari di ${city}?`
   try {
     const response = await fetch('https://api.openai.com/v1/completions', {
       method: 'POST',
@@ -42,7 +42,7 @@ export default async function handler(
       })
     })
     const itinerary = await response.json()
-    const pointsOfInterestPrompt = 'Extract the main points of interest out of this text, with no additional words, only the names of the locations, separated by commas: ' + itinerary.choices[0].text
+    const pointsOfInterestPrompt = 'Ekstrak poin-poin utama yang menarik dari teks ini, tanpa kata-kata tambahan, hanya nama-nama lokasi yang dipisahkan dengan koma: ' + itinerary.choices[0].text
 
     res.status(200).json({
       message: 'success',

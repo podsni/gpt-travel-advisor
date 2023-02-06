@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <main>
       <div className="app-container">
-        <h1 style={styles.header}>GPTravel Advisor</h1>
+        <h1 style={styles.header}>Rencana Perjalanan🚀</h1>
         <div style={styles.formContainer} className="form-container">
           <input style={styles.input}  placeholder="City" onChange={e => setRequest(request => ({
             ...request, city: e.target.value
@@ -74,7 +74,7 @@ export default function Home() {
           <input style={styles.input} placeholder="Days" onChange={e => setRequest(request => ({
             ...request, days: e.target.value
           }))} />
-          <button className="input-button"  onClick={hitAPI}>Build Itinerary</button>
+          <button className="input-button"  onClick={hitAPI}>Bangun Rencana Perjalanan</button>
         </div>
         <div className="results-container">
         {
